@@ -7,7 +7,7 @@ body ,html{
     font-family: 'Roboto';
 }
 .App-logo {
-  height: 40vmin;
+  /* height: 10vmin !important; */
   pointer-events: none;
 }
 
@@ -42,7 +42,7 @@ label:hover{
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite .5s linear;
   }
 }
 
@@ -281,9 +281,12 @@ footer{
 
 @keyframes App-logo-spin {
   from {
-    transform: rotate(0deg);
+    transform: Scale(1,1);
+    transition: all .2s ease-in;
+     /* transform: rotate(-20deg); */
   }
   to {
-    transform: rotate(360deg);
+    transform: Scale(1.15,1.15);
+     /* transform: rotate(-10deg); */
   }
 }

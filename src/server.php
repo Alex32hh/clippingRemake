@@ -1,9 +1,5 @@
 <?php
 include 'config.php';
-
-
-function login($email, $password,$db)
-{
     session_start();
     if ($_SERVER["REQUEST_METHOD"] == "POST" && $_SESSION['email'] == null) {
         // username and password sent from form 
@@ -25,12 +21,21 @@ function login($email, $password,$db)
             $_SESSION['email'] = $myusername;
             $_SESSION['senha'] = $mypassword;
 
-            echo '<script>window.location.href= "/clipping/";</script>';
+            
+            echo '<script>
+            $(".login-content-page").css( "border", "3px solid rgb(45,208,121)" );
+            window.location.href= "/clippinRemake/";
+            </script>';
         } else {
-            echo '<script>alert("Your Login Name or Password is invalid");</script>';
+            echo '<script>
+             $(".inputBox-email").val("'.$myusername. '");
+             $(".inputBox-senha").val("'.$mypassword.'");
+             
+             $(".login-content-page").css( "border", "3px solid red" );
+             $(".login-danger").html("E-mail ou senha errada");
+             </script>';
         }
     }
-}
 
 function logoff(){
         session_destroy();

@@ -1,3 +1,5 @@
+*{margin: 0px;}
+
 .main-login-Page{
     margin: auto;
     max-width: 130vh;
@@ -122,3 +124,76 @@
     .form-list div{
       /* background: #f00; */
     }
+
+
+    .login-main-page{
+      max-width: 100vh;
+      height: 500px;
+      margin: 190px auto;
+      text-align: center;
+      /* background-color: rgb(8, 94, 65); */
+    }
+
+    .login-main-page > div{
+      width: 50vh;
+      margin: auto;
+      border: 2px solid rgb(216, 215, 215);
+      border-radius: 10px;
+      /* background-color: blueviolet; */
+      height: 500px;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: .2fr .1fr .1fr .1fr .fr 0fr;
+      /* column-gap: 10px;
+      row-gap: 10px; */
+    }
+
+    .login-main-page > div > div{
+      /* background-color: rgb(104, 65, 17); */
+      padding: 5px;
+    }
+
+     .login-main-page > div > div img{
+       width: 9vh;
+       margin: auto;
+       padding-top: 5px;
+     }
+    .login-main-page > div > div input{
+      width: 95%;
+      margin: auto;
+      height: 50px;
+      padding-left: 10px;
+      border: none;
+      border-radius: 5px;
+      border: 1px solid rgb(214, 214, 214);
+      font-size: 18px;
+     }
+     .login-main-page > div > div input:focus{
+      border: 2px solid #52d18d5b;
+      transition: all .3s ease-in-out;
+     }
+     .login-main-page > div > div button{
+      width: 95%;
+      margin: auto;
+      height: 50px;
+      font-size: 16px;
+      padding-left: 10px;
+      background-color: #52D18D;
+      border: none;
+      color: #fff;
+      border-radius: 5px;
+      border: 1px solid rgb(214, 214, 214);
+     }
+     .login-main-page > div > div button:hover{
+      width: 95%;
+      margin: auto;
+      height: 50px;
+      padding-left: 10px;
+      background-color: rgb(43, 146, 91);
+      border: none;
+      color: #fff;
+      border-radius: 5px;
+      border: 1px solid rgb(214, 214, 214);
+      font-size: 15px;
+      transition: all .5s ease;
+     }

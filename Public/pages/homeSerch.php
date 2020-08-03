@@ -32,7 +32,7 @@
         <div class='center-input-box'>
 
             <div></div>
-            <form class='form-list' onSubmit={handleSubmit(onSubmit)}>
+            <form class='form-list' action="/clippinRemake/result">
                 <div><button type="submit"> <img src='images/search.png' /> </button></div>
                 <div><input type="text" placeholder="Pesquisar..." name="p" ref={register({ required: true })} />
                 </div>

@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <html>
-<meta http-equiv="refresh" content="2">
+<!-- <meta http-equiv="refresh" content="2"> -->
 
 <head>
     <title>Manifexto - Agregador de Notícias 100% Angolano</title>
@@ -67,28 +67,28 @@ switch ($request) {
     break;
   case '':
     if (!isset($_SESSION['email']) && !$_SESSION['senha']) {
-      require __DIR__ . '/views/login.php';
+    require __DIR__ . '/Public/pages/login.php';
     } else
       require __DIR__ . '/views/index.php';
     break;
   case '/clipping/result/?p=' . $ps . '':
     if (!isset($_SESSION['email']) && !$_SESSION['senha']) {
-      require __DIR__ . '/views/login.php';
+      require __DIR__ . '/Public/pages/login.php';
     } else
-      require __DIR__ . '/views/result.php';
+      require __DIR__ . '/views/results.php';
     break;
   case '/clipping/dashboard/?cp=' . $pscampanha . '':
     require __DIR__ . '/views/dashboard.php';
     break;
   case '/clipping/alertas/':
     if (!isset($_SESSION['email']) && !$_SESSION['senha']) {
-      require __DIR__ . '/views/login.php';
+        require __DIR__ . '/Public/pages/login.php';
     } else
       require __DIR__ . '/views/alertas.php';
     break;
   case '/clipping/edit/?ident=' . ($psident) . '':
     if (!isset($_SESSION['email']) && !$_SESSION['senha']) {
-      require __DIR__ . '/views/login.php';
+        require __DIR__ . '/Public/pages/login.php';
     } else
       require __DIR__ . '/views/edit.php';
     break;
@@ -100,8 +100,8 @@ switch ($request) {
     break;
 
   case '/clipping/Newalert/?p=' . ($ps) . '':
-    if (!isset($_SESSION['email']) && !$_SESSION['senha']) {
-      require __DIR__ . '/views/login.php';
+            if (!isset($_SESSION['email']) && !$_SESSION['senha']) {
+                require __DIR__ . '/Public/pages/login.php';
     } else
       require __DIR__ . '/views/Newalert.php';
     break;
