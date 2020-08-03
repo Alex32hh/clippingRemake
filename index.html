@@ -1,3 +1,97 @@
 <html>
+<head>
+</head>
+<link rel='stylesheet' href='src/App.css'>
+<link rel='stylesheet' href='src/mainpage.css'>
+<body>
 
+ <header>
+            <div class='topBar'>
+                <div class="barcontent">
+                    <div class='leftside'>
+                        <Link> <item>Contactos</item></Link>
+                        <Link> <item>Contactos</item></Link>
+                        <Link> <item>Contactos</item></Link>
+                        <Link> <item>Contactos</item></Link>
+                    </div>
+
+                    <div class='rightside'>
+                        <Link to="1"> <item><img src='images/whatsapp.png' /></item> </Link>
+                        <Link to="2"> <item><img src='images/youtube.png' /></item>  </Link>
+                        <Link to="3"> <item><img src='images/facebook.png' /></item> </Link>
+                        <Link to="4"> <item><img src='images/instagram.png' /></item></Link>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <nav>
+                <div class='divide'>
+                    <img src={logo} class='image-logo' />
+                </div>
+
+                <div class='divide'>
+
+                    <div class='center-box'>
+
+                        <div class='center-top'>
+
+                            <div></div>
+
+                            <div>
+                                <button>
+                                    <img src={search} />
+                                </button>
+                            </div>
+
+                            <div>
+                                <input type='text' placeholder="Pesquisar..." />
+                            </div>
+
+                            <div></div>
+                        </div>
+
+                        <div class='center-bottom'>
+                            <div></div>
+
+                            <div class='catego-items'>
+                                <Link style={{ color: 'inherit', textDecoration: 'inherit' }}><div class='link-hover-manifexto'> <img src='images/plus.png' /> Criar Alerta</div></Link>
+                                <Link style={{ color: 'inherit', textDecoration: 'inherit' }}><div class='link-hover-manifexto'><img src={settings} /> Opções</div></Link>
+                                <Link style={{ color: 'inherit', textDecoration: 'inherit' }}><div class='link-hover-manifexto'><img src={share} /> Partilhar</div></Link>
+                                <Link style={{ color: 'inherit', textDecoration: 'inherit' }}><div class='link-hover-manifexto'><img src={print} /> Imprimir</div></Link>
+                            </div>
+
+                            <div></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class='divide'>
+                    <div class='images-items'>
+
+
+                        <div class='btn-alertas'>
+                            <Link to='/alertas'>
+                                <img src={Sino} />
+                                <label>Alertas</label>
+                            </Link>
+                        </div>
+
+
+                        <div class='btn-conta'>
+                            <Link to='/perfil'>
+                                <img src={user} />
+                                <label>Perfil</label>
+                            </Link>
+                        </div>
+
+
+                    </div>
+                </div>
+            </nav>
+        </header>
+        </body>
 </html>

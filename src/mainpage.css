@@ -1,0 +1,114 @@
+.main-login-Page{
+    margin: auto;
+    max-width: 140vh;
+    /* background-color:rgb(175, 175, 175); */
+    height: 500px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .15fr 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+/* .main-login-Page div{
+    background-color: brown;
+} */
+.top-item{
+    display: grid;
+    grid-template-columns: 10fr 1fr;
+    column-gap: 5px;
+}
+
+ .top-item div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+ }
+
+ .top-item .alerta-icon{
+    padding: 5px;
+    /* background: rgb(16, 193, 216); */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+ }
+
+ .top-item .perfil-icon{
+    padding: 5px;
+    /* background: rgb(16, 193, 216); */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+ }
+
+ .top-item .alerta-icon img{
+     width: 4vh;
+ }
+
+ .top-item .perfil-icon img{
+     width: 4vh;
+ }
+
+ .center-intem{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .4fr 1fr;
+    /* row-gap: 5px; */
+ }
+
+  .center-intem div{
+      /* background: rgb(141, 141, 141); */
+  }
+
+  .center-intem div img{
+     padding-top: 15px;
+     width: 30vh;
+  }
+
+  .center-input-box{
+    display: grid;
+    grid-template-columns: 1fr 1.7fr 1fr;
+    grid-template-rows: .2fr .2fr .2fr;
+    /* column-gap: 5px; */
+    /* background: #f00; */
+  }
+
+  .center-input-box div{
+    /* background-color: blue; */
+  }
+
+  .center-input-box div button{
+    width: 80%;
+    height: 60px;
+    border-radius: 10px 0px 0px 10px;
+    border: none;
+    border-left: 1px solid rgb(187, 187, 187);
+    border-top: 1px solid  rgb(187, 187, 187);
+    border-bottom: 1px solid  rgb(187, 187, 187);
+    background-color: #fff;
+  }
+  .center-input-box div button img{
+    width: 2.5vh;
+    /* border: 1px solid #f00; */
+    padding-top: 0px;
+    }
+
+  .center-input-box div input{
+    width: 100%;
+    height: 60px;
+    border: none;
+    padding-left: 15px;
+    font-size: 20px;
+    border-radius: 0px 10px 10px 0px;
+    border-right: 1px solid rgb(187, 187, 187);
+    border-top: 1px solid rgb(187, 187, 187);
+    border-bottom: 1px solid  rgb(187, 187, 187);
+  }
+
+  .form-list{
+      padding: 10px;
+      display: grid;
+      grid-template-columns: .15fr 1fr;
+  }
+    .form-list div{
+
+    }
