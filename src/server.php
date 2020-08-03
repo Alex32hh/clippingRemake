@@ -41,3 +41,5 @@ function logoff(){
         session_destroy();
         echo '<script>window.location.href= "/clipping/";</script>';
 }
+
+

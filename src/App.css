@@ -32,7 +32,7 @@ label:hover{
 }
 .content-title{
   float: left;
-  padding: 10px 0px;
+  padding: 10px;
   font-size: 17px;
 }
 
@@ -235,16 +235,16 @@ item img{
 
 
 .news-box{
-  width: 100%;
+  width: 97%;
+  margin: auto auto 20px auto;
   min-height: 180px;
-  max-height: 220px;
+  max-height: 210px;
   /* background: #61dafb; */
   display: grid;
   grid-template-columns: .5fr 1fr;
   column-gap: 10px;
   border: 1px solid rgb(231, 229, 229);
   border-radius: 10px;
-  margin-bottom: 20px;
 }
 
 .news-box div{

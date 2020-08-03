@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <html>
-<!-- <meta http-equiv="refresh" content="2"> -->
+<meta http-equiv="refresh" content="2">
 
 <head>
     <title>Manifexto - Agregador de Notícias 100% Angolano</title>
@@ -36,86 +36,93 @@
     <meta data-n-head="ssr" name="twitter:site" content="@manifexto">
     <meta data-n-head="ssr" name="twitter:card" content="summary_large_image">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <link rel='stylesheet' href='src/App.css'>
-    <link rel='stylesheet' href='src/mainpage.css'>
+    <link rel='stylesheet' href=''>
+    <style>
+    <?php include "src/App.css";
+    include "src/mainpage.css";
+    ?>
+    </style>
+
+    <!-- <link rel='stylesheet' href='src/mainpage.css'> -->
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
     <?php
-include 'config.php';
+    include 'config.php';
 
-$request =  str_replace('+', '%', $_SERVER['REQUEST_URI']);
-//depos mudar o resultado dos casos quando fazer deploy do site
+    $request =  str_replace('+', '%', $_SERVER['REQUEST_URI']);
+    //depos mudar o resultado dos casos quando fazer deploy do site
 
-$p = explode("?p=", $request)[1];
-$pident = explode("?ident=", $request)[1];
-$campanha = explode("?cp=", $request)[1];
+    $p = explode("?p=", $request)[1];
+    $pident = explode("?ident=", $request)[1];
+    $campanha = explode("?cp=", $request)[1];
 
-$ps = str_replace('+', '%', $p);
-$psident = str_replace('+', '%', $pident);
-$psident = str_replace('+', '%', $pident);
+    $ps = str_replace('+', '%', $p);
+    $psident = str_replace('+', '%', $pident);
+    $psident = str_replace('+', '%', $pident);
 
-$pscampanha = str_replace('+', '%', $campanha);
+    $pscampanha = str_replace('+', '%', $campanha);
 
-switch ($request) {
-  case '/clippinRemake/':
-    if (!isset($_SESSION['email']) && !$_SESSION['senha']) {
-      require __DIR__ . '/Public/pages/login.php';
-    } else
-      include __DIR__ . '/Public/pages/homeSerch.php';
-    break;
-  case '':
-    if (!isset($_SESSION['email']) && !$_SESSION['senha']) {
-    require __DIR__ . '/Public/pages/login.php';
-    } else
-      require __DIR__ . '/views/index.php';
-    break;
-  case '/clipping/result/?p=' . $ps . '':
-    if (!isset($_SESSION['email']) && !$_SESSION['senha']) {
-      require __DIR__ . '/Public/pages/login.php';
-    } else
-      require __DIR__ . '/views/results.php';
-    break;
-  case '/clipping/dashboard/?cp=' . $pscampanha . '':
-    require __DIR__ . '/views/dashboard.php';
-    break;
-  case '/clipping/alertas/':
-    if (!isset($_SESSION['email']) && !$_SESSION['senha']) {
-        require __DIR__ . '/Public/pages/login.php';
-    } else
-      require __DIR__ . '/views/alertas.php';
-    break;
-  case '/clipping/edit/?ident=' . ($psident) . '':
-    if (!isset($_SESSION['email']) && !$_SESSION['senha']) {
-        require __DIR__ . '/Public/pages/login.php';
-    } else
-      require __DIR__ . '/views/edit.php';
-    break;
-  case '/clipping/login/':
-    require __DIR__ . '/views/login.php';
-    break;
-  case '/clipping/cron-jobs/':
-    require __DIR__ . '/cron-jobs/index.php';
-    break;
+    if ($request != "/clippinRemake/")
+        include 'Public/header.php';
 
-  case '/clipping/Newalert/?p=' . ($ps) . '':
+    switch ($request) {
+        case '/clippinRemake/':
             if (!isset($_SESSION['email']) && !$_SESSION['senha']) {
                 require __DIR__ . '/Public/pages/login.php';
-    } else
-      require __DIR__ . '/views/Newalert.php';
-    break;
+            } else
+                include __DIR__ . '/Public/pages/homeSerch.php';
+            break;
+        case '':
+            if (!isset($_SESSION['email']) && !$_SESSION['senha']) {
+                require __DIR__ . '/Public/pages/login.php';
+            } else
+                require __DIR__ . '/views/index.php';
+            break;
+        case '/clippinRemake/result/?p=' . $ps . '':
+            if (!isset($_SESSION['email']) && !$_SESSION['senha']) {
+                require __DIR__ . '/Public/pages/login.php';
+            } else
+                require __DIR__ . '/Public/pages/results.php';
+            break;
+        case '/clipping/dashboard/?cp=' . $pscampanha . '':
+            require __DIR__ . '/views/dashboard.php';
+            break;
+        case '/clipping/alertas/':
+            if (!isset($_SESSION['email']) && !$_SESSION['senha']) {
+                require __DIR__ . '/Public/pages/login.php';
+            } else
+                require __DIR__ . '/views/alertas.php';
+            break;
+        case '/clipping/edit/?ident=' . ($psident) . '':
+            if (!isset($_SESSION['email']) && !$_SESSION['senha']) {
+                require __DIR__ . '/Public/pages/login.php';
+            } else
+                require __DIR__ . '/views/edit.php';
+            break;
+        case '/clipping/login/':
+            require __DIR__ . '/views/login.php';
+            break;
+        case '/clipping/cron-jobs/':
+            require __DIR__ . '/cron-jobs/index.php';
+            break;
 
-  default:
-    http_response_code(404);
-    echo  str_replace('+', '%', $request);
-    // require __DIR__ . '/views/404.php';
-}
-   
+        case '/clipping/Newalert/?p=' . ($ps) . '':
+            if (!isset($_SESSION['email']) && !$_SESSION['senha']) {
+                require __DIR__ . '/Public/pages/login.php';
+            } else
+                require __DIR__ . '/views/Newalert.php';
+            break;
 
-    if($request != "/clippinRemake/")  
-      include 'Public/header.php';
- 
+        default:
+            http_response_code(404);
+            echo  str_replace('+', '%', $request);
+            // require __DIR__ . '/views/404.php';
+    }
+
+
+
     ?>
 </body>
 
