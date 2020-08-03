@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+body ,html{
+    max-width: 100%;
+    font-family: 'Roboto';
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -67,7 +71,7 @@ nav{
   height: 75px;
   margin: auto;
   display: grid;
-  grid-template-columns: 1fr 4fr .4fr;
+  grid-template-columns: 1fr 4fr 1fr;
   column-gap: 5px;
 }
 /* .divide{
@@ -91,6 +95,7 @@ nav{
   grid-template-rows: 14fr;
   /* column-gap: 5px;
   row-gap: 5px; */
+  /* background: #61dafb; */
 }
 
  .center-top{
@@ -114,7 +119,7 @@ nav{
  }
  
 .center-top div button img{
-    width:35px;
+    width:18px;
     padding:10px;
  }
 
@@ -164,24 +169,24 @@ nav{
 
 .btn-alertas{
   padding-top: 10px;
-  width: 55px;
+  width: 45px;
   grid-column: 5/6;
   color: rgb(0, 0, 0);
 }
 
 .btn-alertas img{
-  width: 3.5vh;
+  width: 3.2vh;
 }
 
 .btn-conta{
   padding-top: 10px;
-  width: 6vh;
+  width: 5vh;
   grid-column: 6/7;
   color: rgb(0, 0, 0);
 }
 
 .btn-conta img{
-    width: 3.5vh;
+  width: 3.2vh;
 }
 
 .topBar{
@@ -205,10 +210,11 @@ nav{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   list-style-type: none;
+  text-align: left;
 }
 
 .leftside item{
-  padding:6px 10px 0px 10px;
+  padding:6px 5px 0px 10px;
   float: left;
   color: #fff;
   font-size: 12px;
@@ -219,12 +225,12 @@ nav{
   grid-column: 2/3;
 }
 .rightside item{
-  padding: 0px 10px 10px 0px;
+  padding: 5px 12px 10px 0px;
   float: right;
-  width: 4vh;
+  width: 2vh;
 }
 item img{
-  width: 2.5vh;
+  width: 2vh;
 }
 
 
