@@ -39,8 +39,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <link rel='stylesheet' href=''>
     <style>
-    <?php include "src/App.css";
-    include "src/mainpage.css";
+    <?php 
+        include "src/App.css";
+        include "src/mainpage.css";
+        include "src/reload.css";
     ?>
     </style>
 
@@ -129,6 +131,7 @@
 </body>
 
 <script type="text/javascript">
+
 window.onload = function () {
     var loadTime = window.performance.timing.domContentLoadedEventEnd-window.performance.timing.navigationStart; 
     // alert(loadTime/ 1000);
@@ -136,6 +139,31 @@ window.onload = function () {
     $('.totalResults').html( <?php echo $resul;?>);
    
 }
+
+var lastCont = 0;
+
+document.onreadystatechange = function() {
+lastCont=+10;
+var boxes = document.querySelectorAll(".news-box");
+for (i = 0; i < boxes.length; i++) {
+    if (document.readyState !== "complete" && i > 10) {
+        //boxes[i].style.display = "none";
+        $('#b'+i).hide();
+    }
+}
+};
+
+
+function showMore(){
+        var boxes = document.querySelectorAll(".news-box");
+        lastCont+=10;
+        var soma = (lastCont / 2);
+        for (i =soma ; i < lastCont; i++) {
+            $('#b'+i).show();
+    }
+    // alert(lastCont);
+}
+
 </script>
 
 </html>

@@ -1,5 +1,4 @@
  <div class='container'>
-
      <div class='content-title'>Cerca de <em class="totalResults"></em> resultados (<em class="seconds-title-time"></em> segundos)</div>
     
      <?php
@@ -11,7 +10,7 @@
         $resul++;
      ?>
 
-     <div class='news-box' onclick="linkClick('<?php echo $item->link;?>')">
+     <div class='news-box' onclick="linkClick('<?php echo $item->link;?>')" id="<?php echo 'b'.$resul;?>">
          <div style="background:url('<?php echo $item->imagem;?>');"></div>
          <div class='news-box-description'>
              <div class='news-box-description-title'>
@@ -29,6 +28,8 @@
     ?>
 
  </div>
+
+ <div class="spinner"></div>
 
  <script>
      function linkClick(url){
