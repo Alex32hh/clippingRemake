@@ -12,6 +12,11 @@
     row-gap: 10px;
 }
 
+.danger{
+  border: 2px solid rgb(192, 0, 0) !important;
+  /* pointer-events: none; */
+}
+
 .main-login-Page div{
     /* background-color: brown; */
 }
@@ -135,17 +140,17 @@
     }
 
     .login-main-page > div{
-      width: 50vh;
+      width: 45vh;
       margin: auto;
       border: 2px solid rgb(216, 215, 215);
       border-radius: 10px;
       /* background-color: blueviolet; */
-      height: 500px;
+      height: 400px;
       display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: .2fr .1fr .1fr .1fr .fr 0fr;
-      /* column-gap: 10px;
-      row-gap: 10px; */
+      grid-template-columns:1fr;
+      grid-template-rows: .2fr .0fr .0fr .01fr 0.2fr;
+      column-gap: 5px;
+      row-gap: 5px;
     }
 
     .login-main-page > div > div{
@@ -197,3 +202,18 @@
       font-size: 15px;
       transition: all .5s ease;
      }
+
+
+@media (prefers-reduced-motion: no-preference) {
+      .danger {
+        animation: danger infinite .5s linear;
+      }
+  }
+@keyframes danger {
+  from {
+   border: .5px solid #f00 !important;
+  }
+  to {
+    border: 4px solid #f00 !important;
+  }
+}

@@ -1,6 +1,7 @@
-<?php session_start(); ?>
+<?php session_start(); 
+ ?>
 <html>
-<meta http-equiv="refresh" content="2">
+<!-- <meta http-equiv="refresh" content="2"> -->
 
 <head>
     <title>Manifexto - Agregador de Notícias 100% Angolano</title>
@@ -50,6 +51,7 @@
 <body>
     <?php
     include 'config.php';
+   
 
     $request =  str_replace('+', '%', $_SERVER['REQUEST_URI']);
     //depos mudar o resultado dos casos quando fazer deploy do site
@@ -64,8 +66,10 @@
 
     $pscampanha = str_replace('+', '%', $campanha);
 
-    if ($request != "/clippinRemake/")
+     if ($request != "/clippinRemake/" && isset($_SESSION['email']) && $_SESSION['senha']){
         include 'Public/header.php';
+        require 'src/server.php';
+    }
 
     switch ($request) {
         case '/clippinRemake/':
@@ -121,9 +125,17 @@
             // require __DIR__ . '/views/404.php';
     }
 
-
-
     ?>
 </body>
+
+<script type="text/javascript">
+window.onload = function () {
+    var loadTime = window.performance.timing.domContentLoadedEventEnd-window.performance.timing.navigationStart; 
+    // alert(loadTime/ 1000);
+    $('.seconds-title-time').html(loadTime/ 1000);
+    $('.totalResults').html( <?php echo $resul;?>);
+   
+}
+</script>
 
 </html>

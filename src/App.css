@@ -32,7 +32,7 @@ label:hover{
 }
 .content-title{
   float: left;
-  padding: 10px;
+  padding: 15px;
   font-size: 17px;
 }
 
@@ -51,7 +51,7 @@ label:hover{
 }
 
 .container{
-  max-width: 140vh;
+  max-width: 130vh;
   display: grid;
   margin: auto;
   padding-top: 120px;
@@ -67,21 +67,24 @@ header{
 }
 
 nav{
-  max-width: 140vh;
+  max-width: 130vh;
   height: 75px;
   margin: auto;
   display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-columns: 3fr 4fr 3fr;
   column-gap: 5px;
 }
 /* .divide{
    background: rgb(65, 64, 64);
 } */
 .divide .image-logo{
-  padding-top: 3px;
-  margin: auto;
-  max-width: 90%;
+  padding-top:5px;
+  margin: 10px auto auto 10px;
+  height: 50px;
+  width: 98%;
   min-width: 10vh;
+  background: url('../images/Logotipo_Manifexto2018@2x.png') left no-repeat;
+  background-size: contain;
 }
 
 .divide .images-items{
@@ -93,18 +96,18 @@ nav{
   display: grid;
   grid-template-columns: .1fr;
   grid-template-rows: 14fr;
-  /* column-gap: 5px;
-  row-gap: 5px; */
+  column-gap: 5px;
+  row-gap: 5px;
   /* background: #61dafb; */
 }
 
  .center-top{
-  background: #fff;
+  /* background: rgb(83, 78, 78); */
   height: 48px;
   text-align: left;
   grid-column: 1/4;
   display: grid;
-  grid-template-columns: .3fr 0fr 1fr .3fr;
+  grid-template-columns: .2fr 0fr 6fr .2fr;
  }
 
  .center-top div button{
@@ -138,7 +141,7 @@ nav{
   text-align:left;
   grid-column:1/4;
   display:grid;
-  grid-template-columns:.28fr 1fr .28fr;
+  grid-template-columns:.28fr 1.5fr .30fr;
 
 }
 
@@ -148,18 +151,20 @@ nav{
 
 .catego-items{
   display: grid;
-  grid-template-columns:3fr 3fr 3fr 3fr;
-  column-gap: 10px;
+  grid-template-columns:.5fr .5fr .5fr .5fr  ;
+  /* column-gap: 5px; */
 }
 
 .catego-items div{
+  width: 75px;
   text-align: center;
   text-transform:capitalize;
-  font-size: 12px;
-  padding-top: 5px;
-  padding-right: 8px;
+  font-size: 11px;
+  padding-top: 0px;
+  padding-right: 0px;
   color: #000;
   text-decoration: none;
+  /* background-color: #61dafb; */
 }
 
 .catego-items div img{
@@ -176,6 +181,9 @@ nav{
 
 .btn-alertas img{
   width: 3.2vh;
+}
+.btn-alertas label{
+  margin-left: -5px;
 }
 
 .btn-conta{
@@ -195,12 +203,13 @@ nav{
   width: 100%;
 }
 .barcontent{
-  max-width: 140vh;
+  max-width: 130vh;
   height: 35px;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
 .leftside{
   height: 35px;
   grid-column: 1/2;
@@ -208,7 +217,7 @@ nav{
 
 .leftside ul{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   list-style-type: none;
   text-align: left;
 }
@@ -264,14 +273,23 @@ item img{
   /* background-color: rgb(112, 112, 112); */
   border-radius: 0px !important;
   text-align: left;
-  padding: 6px;
+  padding: 12px;
 }
 
 .news-box-description-title{
-  font-size: 16px;
   font-weight: bold;
 }
-
+.news-box-description-title a{
+  text-decoration: none;
+  color: #000;
+  font-size: 17px;
+}
+.news-box-description-title a:hover{
+  color: rgb(45, 210, 124);
+}
+.box-news-font{
+  font-size: 15px;
+}
 
 footer{
  
@@ -288,5 +306,35 @@ footer{
   to {
     transform: Scale(1.15,1.15);
      /* transform: rotate(-10deg); */
+  }
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .divide .image-logo{
+    padding-top:0px;
+    width: 3vh;
+    margin: auto;
+    min-width: 10vh;
+    background: url('../images/mobileIc.png') center no-repeat;
+    background-size: contain;
+  }
+
+  .center-top{
+    grid-template-columns: 0fr 0fr 1.4fr 0fr;
+   }
+   
+   nav{
+    display: grid;
+    grid-template-columns: 1fr 6fr 2fr;
+    column-gap: 5px;
+  }
+  .box-news-descricao{
+    font-size: 15px;
+  }
+  .box-news-font{
+    font-size: 13px;
   }
 }
