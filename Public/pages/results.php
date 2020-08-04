@@ -26,11 +26,13 @@
     <?php
        }
     ?>
-
  </div>
 
+ <div class="spinner-body">
  <div class="spinner"></div>
-
+ <div class="noMoreResult">Sem mais Resultados</div>
+ </div>
+ 
  <script>
      function linkClick(url){
         window.open(url, '_blank');

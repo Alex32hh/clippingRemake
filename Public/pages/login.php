@@ -2,12 +2,13 @@
     <div class="login-main-page">
         <div class="login-content-page">
             <div>
-                <img src="images/mobileIc.png" class="App-logo" />
+                <img src="../images/mobileIc.png" class="App-logo" />
             </div>
             <div>Entre na sua conta Manifexto Clipping</div>
             <div><input type="text" name="email" placeholder="Email" class="inputBox-email" /></div>
             <div><input type="password" name="password" placeholder="Senha" class="inputBox-senha" /></div>
             <div>
+
                 <button type="submit">
                     Entrar
                 </button>

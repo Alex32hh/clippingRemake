@@ -119,11 +119,15 @@ nav{
   background-color: rgb(255, 255, 255);
   margin: 5px 0px;
   border-radius: 4px 0px 0px 4px;
+  width: 5vh;
+  background: url(../images/search.png) center no-repeat;
+  background-size: 20px;
  }
  
 .center-top div button img{
     width:18px;
     padding:10px;
+    background: #000;
  }
 
  .center-top div input{
@@ -332,7 +336,7 @@ footer{
     column-gap: 5px;
   }
   .box-news-descricao{
-    font-size: 15px;
+    font-size: 13px;
   }
   .box-news-font{
     font-size: 13px;

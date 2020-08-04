@@ -2,7 +2,6 @@
  ?>
 <html>
 <!-- <meta http-equiv="refresh" content="2"> -->
-
 <head>
     <title>Manifexto - Agregador de Notícias 100% Angolano</title>
     <meta data-n-head="ssr" charset="utf-8">
@@ -76,19 +75,19 @@
     switch ($request) {
         case '/clippinRemake/':
             if (!isset($_SESSION['email']) && !$_SESSION['senha']) {
-                require __DIR__ . '/Public/pages/login.php';
+                echo "<script>window.location.href='/clippinRemake/login/';</script>";
             } else
                 include __DIR__ . '/Public/pages/homeSerch.php';
             break;
         case '':
             if (!isset($_SESSION['email']) && !$_SESSION['senha']) {
-                require __DIR__ . '/Public/pages/login.php';
+                echo "<script>window.location.href='/clippinRemake/login/';</script>";
             } else
                 require __DIR__ . '/views/index.php';
             break;
         case '/clippinRemake/result/?p=' . $ps . '':
             if (!isset($_SESSION['email']) && !$_SESSION['senha']) {
-                require __DIR__ . '/Public/pages/login.php';
+                echo "<script>window.location.href='/clippinRemake/login/';</script>";
             } else
                 require __DIR__ . '/Public/pages/results.php';
             break;
@@ -97,18 +96,18 @@
             break;
         case '/clipping/alertas/':
             if (!isset($_SESSION['email']) && !$_SESSION['senha']) {
-                require __DIR__ . '/Public/pages/login.php';
+                echo "<script>window.location.href='/clippinRemake/login/';</script>";
             } else
                 require __DIR__ . '/views/alertas.php';
             break;
         case '/clipping/edit/?ident=' . ($psident) . '':
             if (!isset($_SESSION['email']) && !$_SESSION['senha']) {
-                require __DIR__ . '/Public/pages/login.php';
+                echo "<script>window.location.href='/clippinRemake/login/';</script>";
             } else
                 require __DIR__ . '/views/edit.php';
             break;
-        case '/clipping/login/':
-            require __DIR__ . '/views/login.php';
+        case '/clippinRemake/login/':
+            require __DIR__ . '/Public/pages/login.php';
             break;
         case '/clipping/cron-jobs/':
             require __DIR__ . '/cron-jobs/index.php';
@@ -116,7 +115,7 @@
 
         case '/clipping/Newalert/?p=' . ($ps) . '':
             if (!isset($_SESSION['email']) && !$_SESSION['senha']) {
-                require __DIR__ . '/Public/pages/login.php';
+                echo "<script>window.location.href='/clippinRemake/login/';</script>";
             } else
                 require __DIR__ . '/views/Newalert.php';
             break;
@@ -141,7 +140,7 @@ window.onload = function () {
 }
 
 var lastCont = 0;
-
+var gridCont = (<?php echo $resul;?>);
 document.onreadystatechange = function() {
 lastCont=+10;
 var boxes = document.querySelectorAll(".news-box");
@@ -163,6 +162,16 @@ function showMore(){
     }
     // alert(lastCont);
 }
+
+$(window).scroll(function() {
+   if($(window).scrollTop() + window.innerHeight == $(document).height()) {
+        if(lastCont >= gridCont){
+            $('.noMoreResult').show();
+            $('.spinner').hide();
+        }else
+            setTimeout(function() {showMore();}, 500);
+   }
+});
 
 </script>
 

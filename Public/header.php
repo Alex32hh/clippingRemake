@@ -37,7 +37,6 @@
     <nav>
         <div class='divide'>
             <div class='image-logo'></div>
-            <button onclick="showMore()" type="button">Show more</button>
         </div>
 
         <div class='divide'>
@@ -50,7 +49,7 @@
 
                     <div>
                         <button type="submit">
-                            <img src='../images/search@2x.png' />
+                           
                         </button>
                     </div>
 
