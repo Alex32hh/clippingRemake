@@ -25,14 +25,14 @@
     <div class='center-intem'>
 
         <div>
-            <img src=images/Logotipo_Manifexto2018@2x.png />
+            <img src='images/Logotipo_Manifexto2018@2x.png' />
         </div>
 
 
         <div class='center-input-box'>
 
             <div></div>
-            <form class='form-list' action="/clippinRemake/result/">
+            <form class='form-list' action="/clipping/result/">
                 <div><button type="submit"> <img src='images/search.png' /> </button></div>
                 <div><input type="text" placeholder="Pesquisar..." name="p" ref={register({ required: true })} />
                 </div>

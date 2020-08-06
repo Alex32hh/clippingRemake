@@ -1,4 +1,4 @@
-<form action="/clippinRemake/result/">
+<form action="/clipping/result/">
 <header>
     <div class='topBar'>
         <div class="barcontent">
@@ -54,7 +54,12 @@
                     </div>
 
                     <div>
-                        <input type='text' name="p" placeholder="Pesquisar..."  value="<?php echo $_GET['p'];?>" />
+                        <input type='text' name="p" placeholder="Pesquisar..."  value="<?php 
+                        if(isset($_GET['req']))
+                        echo 'Redirecionando...';
+                        else
+                          echo $_GET['p'];
+                        ?>" />
                     </div>
 
                     <div></div>
@@ -70,15 +75,15 @@
                         </a>
                         <a>
                             <div class='link-hover-manifexto'><img style="position: relative; top:3px;"
-                                    src='../images/plus.png' /> Opções</div>
+                                    src='../images/gear2.png' /> Opções</div>
                         </a>
                         <a>
                             <div class='link-hover-manifexto'><img style="position: relative; top:3px;"
-                                    src='../images/plus.png' /> Partilhar</div>
+                                    src='../images/share.png' /> Partilhar</div>
                         </a>
                         <a>
                             <div class='link-hover-manifexto'><img style="position: relative; top:3px;"
-                                    src='../images/plus.png' /> Imprimir</div>
+                                    src='../images/print.png' /> Imprimir</div>
                         </a>
                     </div>
 

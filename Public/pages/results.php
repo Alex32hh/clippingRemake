@@ -5,16 +5,17 @@
 
      $resul = 0;
 
+     if(!isset($_GET['req']))
        foreach(feachData($_GET['p']) as $item){
         //    echo $item->link;
         $resul++;
      ?>
-
-     <div class='news-box' onclick="linkClick('<?php echo $item->link;?>')" id="<?php echo 'b'.$resul;?>">
+     
+     <div class='news-box' onclick="linkClick('<?php echo $request.'&req='.base64_encode($item->link);?>')" id="<?php echo 'b'.$resul;?>">
          <div style="background:url('<?php echo $item->imagem;?>');"></div>
          <div class='news-box-description'>
              <div class='news-box-description-title'>
-                 <a href="<?php echo $item->link;?>">
+                 <a href="<?php echo $request.'&req='.base64_encode($item->link);?>">
                     <?php echo $item->Titulo;?>
                  </a>
              </div>
@@ -32,7 +33,22 @@
  <div class="spinner"></div>
  <div class="noMoreResult">Sem mais Resultados</div>
  </div>
- 
+
+ <?php
+
+   if(isset($_GET['req'])){
+   echo "
+        <script>
+                $('.content-title').css('visibility','hidden'); 
+        </script>";
+        $truUrl =  featchDataUrl(base64_decode($_GET['req']));
+        echo '<script>document.location="'.$truUrl.'"</script>';
+           
+   exit;
+   }
+
+ ?>
+
  <script>
      function linkClick(url){
         window.open(url, '_blank');

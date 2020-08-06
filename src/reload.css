@@ -18,7 +18,7 @@
   height: 50px;
   position: relative;
   background: rgba(231, 229, 229, 0.795);
-  animation-duration: 2.5s;
+  animation-duration: .5s;
   animation-name: animSpin;
   animation-timing-function: linear;
   animation-iteration-count: infinite;

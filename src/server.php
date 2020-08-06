@@ -1,6 +1,7 @@
 <?php
 use Goutte\Client;
 require 'cron-jobs/vendor/autoload.php';
+
 include 'config.php';
     session_start();
     if ($_SERVER["REQUEST_METHOD"] == "POST" && $_SESSION['email'] == null) {
@@ -26,7 +27,7 @@ include 'config.php';
             
             echo '<script>
             $(".login-content-page").css( "border", "3px solid rgb(45,208,121)");
-            window.location.href= "/clippinRemake/";
+            window.location.href= "/clipping/";
             </script>';
         } else {
             echo '<script>
@@ -123,3 +124,13 @@ function feachData($pesquisa){
     return $school_data;
 }
 
+
+function featchDataUrl($url){
+        $css_selector = "noscript a";
+        $thing_to_scrape = "href";
+        $client = new Client();
+        $crawler = $client->request('GET', $url);
+        $output = $crawler->filter($css_selector)->extract($thing_to_scrape);
+        // var_dump($output);
+        return $output[0];
+}

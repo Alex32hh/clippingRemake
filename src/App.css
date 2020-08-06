@@ -71,27 +71,30 @@ nav{
   height: 75px;
   margin: auto;
   display: grid;
-  grid-template-columns: 3fr 4fr 3fr;
+  grid-template-columns: 3.2fr 4fr 2.5fr;
   column-gap: 5px;
 }
-/* .divide{
-   background: rgb(65, 64, 64);
-} */
+/* .divide{*/
+/*   background: rgb(65, 64, 64);*/
+/*} */
 .divide .image-logo{
   padding-top:5px;
   margin: 10px auto auto 10px;
   height: 50px;
-  width: 98%;
+  width: 100%;
   min-width: 10vh;
-  background: url('../images/Logotipo_Manifexto2018@2x.png') left no-repeat;
+  background: url('../cron-jobs/img/manilogo.png') left no-repeat;
   background-size: contain;
 }
 
 .divide .images-items{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: .5fr .5fr;
 }
-
+.images-items div{
+     text-align:center;
+     /*background: #61dafb; */
+}
 .center-box{
   display: grid;
   grid-template-columns: .1fr;
@@ -121,6 +124,8 @@ nav{
   border-radius: 4px 0px 0px 4px;
   width: 5vh;
   background: url(../images/search.png) center no-repeat;
+  background-color:rgb(236,236,236);
+
   background-size: 20px;
  }
  
@@ -155,6 +160,7 @@ nav{
 
 .catego-items{
   display: grid;
+  margin:auto;
   grid-template-columns:.5fr .5fr .5fr .5fr  ;
   /* column-gap: 5px; */
 }
@@ -184,10 +190,7 @@ nav{
 }
 
 .btn-alertas img{
-  width: 3.2vh;
-}
-.btn-alertas label{
-  margin-left: -5px;
+  width: 3vh;
 }
 
 .btn-conta{
@@ -198,7 +201,7 @@ nav{
 }
 
 .btn-conta img{
-  width: 3.2vh;
+  width: 3vh;
 }
 
 .topBar{
@@ -211,7 +214,7 @@ nav{
   height: 35px;
   margin: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr .8fr;
 }
 
 .leftside{
@@ -227,7 +230,7 @@ nav{
 }
 
 .leftside item{
-  padding:6px 5px 0px 10px;
+  padding:8px 5px 0px 10px;
   float: left;
   color: #fff;
   font-size: 12px;
@@ -241,6 +244,7 @@ nav{
   padding: 5px 12px 10px 0px;
   float: right;
   width: 2vh;
+  margin-right: 10px;
 }
 item img{
   width: 2vh;
@@ -327,18 +331,57 @@ footer{
   }
 
   .center-top{
-    grid-template-columns: 0fr 0fr 1.4fr 0fr;
+      margin:auto;
+      grid-template-columns: 0fr 0fr 1.4fr 0fr;
    }
+   
    
    nav{
     display: grid;
-    grid-template-columns: 1fr 6fr 2fr;
-    column-gap: 5px;
+    grid-template-columns: 1fr 6fr .7fr;
+    column-gap: 3px;
   }
+  
+  
   .box-news-descricao{
-    font-size: 13px;
+    font-size: 15px;
+    text-align:justify;
   }
   .box-news-font{
     font-size: 13px;
   }
+  
+  
+  .rightside item{
+   padding: 6px 12px 10px 0px;
+   width: 2vh;
+  }
+  
+  item img{
+      width: 2.5vh;
+  }
+  
+  .catego-items{
+      margin-left:-25px;
+  }
+  .center-top{
+      margin-left:6px;
+      width:97%;
+      
+  }
+  
+ .news-box{
+  grid-template-: .5fr 1fr;
+  column-gap:0px;
+ }
+
+.news-box-description div{
+  /* background-color: rgb(112, 112, 112); */
+  border-radius: 0px !important;
+  text-align: left;
+  padding:0px 8px 8px 8px;
+}
+
+
+    
 }

@@ -2,7 +2,7 @@
     <div class="login-main-page">
         <div class="login-content-page">
             <div>
-                <img src="../images/mobileIc.png" class="App-logo" />
+                <img src="https://manifexto.com/clipping/images/mobileIc.png" class="App-logo" />
             </div>
             <div>Entre na sua conta Manifexto Clipping</div>
             <div><input type="text" name="email" placeholder="Email" class="inputBox-email" /></div>
