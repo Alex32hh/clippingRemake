@@ -16,16 +16,16 @@
             </div>
 
             <div class='rightside'>
-                <a href="1">
+                <a href="https://ow.ly/aPZ130oH6mx">
                     <item><img src='../images/whatsapp.png' /></item>
                 </a>
-                <a href="2">
+                <a href="https://youtube.com/c/Manifexto">
                     <item><img src='../images/youtube.png' /></item>
                 </a>
-                <a href="3">
+                <a href="https://facebook.com/manifexto">
                     <item><img src='../images/facebook.png' /></item>
                 </a>
-                <a href="4">
+                <a href="https://twitter.com/manifexto">
                     <item><img src='../images/instagram.png' /></item>
                 </a>
             </div>
@@ -35,8 +35,10 @@
     </div>
 
     <nav>
-        <div class='divide'>
-            <div class='image-logo'></div>
+        <div class='divide' onclick="goto('/clipping/')">
+            <div class='image-logo' >
+             <a href="/clipping/" style="width: 90%; float:left; height:50px;"></a>
+            </div>
         </div>
 
         <div class='divide'>
@@ -44,15 +46,9 @@
             <div class='center-box'>
 
                 <div class='center-top'>
-
                     <div></div>
 
-                    <div>
-                        <button type="submit">
-                           
-                        </button>
-                    </div>
-
+                    <div><button type="submit"></button></div>
                     <div>
                         <input type='text' name="p" placeholder="Pesquisar..."  value="<?php 
                         if(isset($_GET['req']))
@@ -62,33 +58,45 @@
                         ?>" />
                     </div>
 
-                    <div></div>
-                </div>
-
-                <div class='center-bottom'>
-                    <div></div>
-
-                    <div class='catego-items'>
-                        <a>
-                            <div class='link-hover-manifexto'><img style="position: relative; top:3px;"
-                                    src='../images/plus.png' /> Criar Alerta</div>
-                        </a>
-                        <a>
-                            <div class='link-hover-manifexto'><img style="position: relative; top:3px;"
-                                    src='../images/gear2.png' /> Opções</div>
-                        </a>
-                        <a>
-                            <div class='link-hover-manifexto'><img style="position: relative; top:3px;"
-                                    src='../images/share.png' /> Partilhar</div>
-                        </a>
-                        <a>
-                            <div class='link-hover-manifexto'><img style="position: relative; top:3px;"
-                                    src='../images/print.png' /> Imprimir</div>
+                    <div class="icon-center">
+                        <a href="#">
+                            <div class="icon-ic" style="background-image: url('../images/plus.png');"></div>
+                            <div class="icon-let">
+                            criar alerta
+                            </div>
                         </a>
                     </div>
 
-                    <div></div>
+                    <div class="icon-center">
+                    <a href="#">
+                            <div class="icon-ic" style="background-image: url('../images/gear2.png');"></div>
+                            <div class="icon-let">
+                            Opções
+                            </div>
+                    </a>
+                    </div>
+
+                    <div class="icon-center">
+                    <a href="#">
+                            <div class="icon-ic" style="background-image: url('../images/share.png');"></div>
+                            <div class="icon-let">
+                            Partilhar
+                            </div>
+                    </a>
+                    </div>
+
+                    <div class="icon-center">
+                        <a href="#" style="border-radius:0px 4px 4px 0px;">
+                            <div class="icon-ic" style="background-image: url('../images/print.png');"></div>
+                            <div class="icon-let">
+                            Imprimir
+                            </div>
+                        </a>
+                    </div>
+                    
                 </div>
+
+            
 
             </div>
 
@@ -99,7 +107,7 @@
 
 
                 <div class='btn-alertas'>
-                    <a to='/alertas'>
+                    <a href='/clipping/alertas/'>
                         <img src='../images/bell.png' />
                         <label>Alertas</label>
                     </a>

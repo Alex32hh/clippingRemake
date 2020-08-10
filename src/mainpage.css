@@ -59,6 +59,18 @@
      width: 3.2vh;
  }
 
+ .alerta-icon:hover  img,.alerta-icon:hover label{
+  filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
+  cursor: pointer;
+  transform: scale(1.1,1.1);
+ }
+
+ .perfil-icon:hover  img,.perfil-icon:hover label{
+  filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
+  cursor: pointer;
+  transform: scale(1.1,1.1);
+ }
+
  .perfil-icon label{
    padding-left: 3px;
  }
@@ -255,6 +267,8 @@
      .perfil-icon label{
           margin-left:-3px;
      }
+
+   
   
   
 }

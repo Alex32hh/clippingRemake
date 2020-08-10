@@ -58,7 +58,7 @@ try {
                 $mail->SMTPAuth   = true;
                 $mail->Port       = 587;
                 $mail->Username   = "noreply@manifexto.com"; 
-                $mail->Password   = "Man1fexto!";      
+                $mail->Password   = "Man1fexto12!";      
                 
                 $mail->setFrom('noreply@manifexto.com','Manifexto Clipping');
                 $mail->isHTML(true);

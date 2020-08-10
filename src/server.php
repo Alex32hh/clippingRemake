@@ -134,3 +134,4 @@ function featchDataUrl($url){
         // var_dump($output);
         return $output[0];
 }
+
