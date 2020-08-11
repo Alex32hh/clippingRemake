@@ -57,7 +57,7 @@
 <body>
     <?php
     include 'config.php';
-
+   
     $request =  str_replace('+', '%', $_SERVER['REQUEST_URI']);
     //depos mudar o resultado dos casos quando fazer deploy do site
 
@@ -78,12 +78,12 @@
         echo '<title> Resultados de '.($_GET['p']).'</title>';
     }
 
-
-
      if ($request != "/clipping/" && isset($_SESSION['email']) && $_SESSION['senha']){
         include 'Public/header.php';
-        require 'src/server.php';
-    }
+        require 'src/server.php';     
+        echo newAlert();
+        echo sharePopup($request);
+     }
 
     switch ($request) {
         case '/clipping/':
@@ -139,58 +139,94 @@
             // require __DIR__ . '/views/404.php';
     }
 
+
     ?>
 </body>
 
 <script type="text/javascript">
 
-window.onload = function () {
-    var loadTime = window.performance.timing.domContentLoadedEventEnd-window.performance.timing.navigationStart; 
-    // alert(loadTime/ 1000);
-    $('.seconds-title-time').html(loadTime/ 1000);
-    $('.totalResults').html( <?php echo $resul;?>);
-   
-}
-
-var lastCont = 0;
-var gridCont = (<?php echo $resul;?>);
-document.onreadystatechange = function() {
-lastCont=+10;
-var boxes = document.querySelectorAll(".news-box");
-for (i = 0; i < boxes.length; i++) {
-    if (document.readyState !== "complete" && i > 10) {
-        //boxes[i].style.display = "none";
-        $('#b'+i).hide();
+    window.onload = function () {
+        var loadTime = window.performance.timing.domContentLoadedEventEnd-window.performance.timing.navigationStart; 
+        // alert(loadTime/ 1000);
+        $('.seconds-title-time').html(loadTime/ 1000);
+        $('.totalResults').html( <?php echo $resul;?>);
+    
     }
-}
-};
 
-
-function showMore(){
+    var lastCont = 0;
+    var gridCont = (<?php echo $resul;?>);
+    document.onreadystatechange = function() {
+    lastCont=+10;
     var boxes = document.querySelectorAll(".news-box");
-    lastCont+=5;
-    var soma = (lastCont / 2);
-    for (i =soma ; i < lastCont; i++)
-        $('#b'+i).show();
-        
-    // alert(lastCont);
-}
+    for (i = 0; i < boxes.length; i++) {
+        if (document.readyState !== "complete" && i > 10) {
+            //boxes[i].style.display = "none";
+            $('#b'+i).hide();
+        }
+    }
+    };
 
-$(window).scroll(function() {
-   if($(window).scrollTop() + window.innerHeight == $(document).height()) {
-        if(lastCont >= gridCont){
-            $('.noMoreResult').show();
-            $('.spinner').hide();
-        }else
-            setTimeout(function() {showMore();}, 800);
+
+    function showMore(){
+        var boxes = document.querySelectorAll(".news-box");
+        lastCont+=5;
+        var soma = (lastCont / 2);
+        for (i =soma ; i < lastCont; i++)
+            $('#b'+i).show();
+            
+        // alert(lastCont);
+    }
+
+    $(window).scroll(function() {
+    if($(window).scrollTop() + window.innerHeight == $(document).height()) {
+            if(lastCont >= gridCont){
+                $('.noMoreResult').show();
+                $('.spinner').hide();
+            }else
+                setTimeout(function() {showMore();}, 800);
+    }
+    });
+
+
+    function goto(url){
+        window.open(url,'_self');
+    }
+
+
+
+
+    function toggle(id){
+    $('.'+id).toggle();
+    }
+
+    function myFunction() {
+    $('#more').toggle();
+    }
+
+
+    function printContent(el) {
+        var restorepage = $('body').html();
+        var printcontent = $('#' + el).clone();
+        $('body').empty().html(printcontent);
+        window.print();
+        $('body').html(restorepage);
+    }
+
+    function openClose(id) {
+        $('#'+id).toggle();
+    }
+
+    function CopyToclip() {
+        /* Get the text field */
+        var copyText = $('.inputClipBoard');
+
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
    }
-});
-
-
-function goto(url){
-    window.open(url,'_self');
-}
-
 
 
 </script>

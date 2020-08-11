@@ -19,7 +19,7 @@
         <div class="ic-bck" style="background: url('https://image.flaticon.com/icons/svg/886/886170.svg');"></div>
             <div>Dashboard</div>
         </a>
-        <a href="#" class="icon-alert-list">
+        <a href="/clipping/alertas/?delite=<?php echo $row['id'];?>" class="icon-alert-list">
         <div class="ic-bck" style="background: url('https://image.flaticon.com/icons/svg/1214/1214428.svg');"></div>
             <div>Remover</div>
         </a>
@@ -39,16 +39,23 @@
         } else {
             echo "<em>Sem alertas Criados</em>";
         }
+    
         $db->close();
 
+      
 ?>
      
-
-
-
-
-
-
-
     
 </div>
+
+<script>
+    function myFunction() {
+    alert('sfdf');
+  var x = document.getElementById("#more");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+    </script>

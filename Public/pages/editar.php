@@ -1,55 +1,62 @@
+<script>
+
+var itens = document.querySelectorAll("#more");
+var soma = 0;
+
+for (i =soma ; i < lastCont; i++)
+   itens[i].toggle();
+
+function myFunction() {
+  $('#moreb').toggle();
+ }
+
+
+ </script>
+
 <div class='container'>
      <div href="#" class='content-title'><a href="/clipping/" class="normalLink">Clipping > <?php echo explode('/',$request)[2];?></a></div>
+  
+
+     <?php
      
-  <form class="form-input-style">
+     
+     
+if (isset($_POST['save'])) {
 
-<?php
-    $sql = "SELECT * FROM alertas WHERE idusuario ='" . $_SESSION['email'] . "' and id='".$_GET['ident']."' ";
-    $result = $db->query($sql);
-
-    if ($result->num_rows > 0) {
-      // output data of each row
-      while ($row = $result->fetch_assoc()) {
-    ?>
-
-  <div class="input-data-field">
-     <input name="emaiil" style="border: 1px solid red !important;" data-role="tagsinput" value="<?php echo $row['alerta'];?>" />
-     <div class="prefix-button">
-        <i class="fas fa-bell"></i>
-     </div>
-  </div>
+  $sql = "UPDATE alertas SET senderId='".$_POST['userid']."',alerta ='".$_POST['alerta']."',frequancia ='".($_POST['tempo']== null?$_POST['f']:$_POST['tempo'])."',quantidade='".$_POST['n']."' WHERE id='".$_GET['ident']."' and idusuario = '" . $_SESSION['email'] . "'";
+  if ($db->query($sql) === TRUE){
+    echo '<div class="popup">
+    <form class="form-input-style" method="POST">
   
-  <div class="input-data-field">
-     <input name="emaiil" style="border: 1px solid red !important;" data-role="tagsinput" value="<?php echo $row['senderId'].','.$row['idusuario'];?>" />
-     <div class="prefix-button">
-        <i class="fas fa-at"></i>
-     </div>
-  </div>
+        <div class="input-data-field" style="background:#fff;">
+         Alerta Atualizado!
+        </div>
+ 
+        <div class="input-data-field"> </div>
+
+        <div class="button-action" style="background: #fff;">
+          <a></a>
+          <a href="/clipping/alertas/" type="submit" name="save" style="background:#fff">
+        <label style="font-size:15px;">  OK </label>
+          </a>
+
+
+              <a style="background: #fff;  transform: scale(1,1) !important;"></a>
+              <a style="background: #fff;  transform: scale(1,1) !important;"></a>
+        </div>
+
+    <form>
+    </div> 
+      ';
+  } else {
+    echo "Error updating record: " . $db->error;
+  }
+
+  $db->close();
+}
+
+
+     
+     ?>
   
-<?php
-          }
-        } 
-        $db->close();
-
-?>   
-  </form>
-
-  <div class="button-action">
-  <a></a>
-    <a href="#">
-      <div class="iten-button"> <i class="fas fa-save"></i> </div>
-      <div class="iten-button">Guardar</div>
-    </a>
-
-    <a href="#">
-      <div class="iten-button"> <i class="fas fa-trash"></i> </div>
-      <div class="iten-button">Apagar alerta</div>
-    </a>
-
-    <a href="#">
-      <div class="iten-button"> <i class="fas fa-cog"></i> </div>
-      <div class="iten-button">Mais opções</div>
-    </a>
-    <a style="background: #fff;  transform: scale(1,1) !important;"></a>
-    
-</form>
+</div>

@@ -24,16 +24,33 @@ label{
   border-right: 4px solid rgb(85, 85, 85);
   font-size: 12px;
 }
+#more{
+  display: none; 
+}
+
+.popup{
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.651);
+  z-index: 10000;
+}
+
+
 
 .normalLink{
   color: rgb(0, 0, 0);
   text-decoration: none;
   font-size: 12px;
 }
+
 label:hover,.normalLink:hover{
   color:rgb(57, 209, 127);
   cursor: pointer;
 }
+
 .link-hover-manifexto{
   color: #000;
 }
@@ -136,6 +153,17 @@ nav{
    text-decoration: none;
    color: rgb(82, 80, 80);
    height: 45px;
+ }
+
+ .close-btn{
+   float: right;
+   font-size: 20px;
+ }
+
+ .close-btn i:hover{
+  -webkit-text-fill-color: rgb(45, 210, 124 ) !important;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke:1pxrgb(45, 210, 124) !important;
  }
  /* .center-top .icon-center a div{
    border-top: 1px solid #61dafb;
@@ -415,19 +443,25 @@ item img{
   background-size: 10px;
 }
 
-
 /* editar Alertas */
 .form-input-style{
-  width: 99%;
-  margin: auto;
+  max-width:75vh;
+  min-width:75vh;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: .6fr .6fr;
   row-gap: 5px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .form-input-style div{
-  width: 60% !important;
+  width: 100% !important;
   border: none;
   box-shadow: none;
   background: rgb(233, 231, 231);
@@ -436,6 +470,13 @@ item img{
   border: none;
   box-shadow: none;
   background: transparent;
+}
+.form-input-style .input-data-field select{
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  height: 30px;
+  padding-left: 5px;
 }
 
 .input-data-field{
@@ -457,8 +498,10 @@ item img{
   width: 99%;
   margin: 20px auto;
   display: grid;
-  grid-template-columns:0fr .25fr .25fr .25fr 3fr;
+  grid-template-columns:0fr .3fr .4fr .4fr 3fr;
   column-gap: 5px;
+  position: relative;
+  left: -5px;
 }
 
 .button-action a{
@@ -467,13 +510,12 @@ item img{
   grid-template-rows: .3fr .3fr;
   border-radius: 3px;
   text-align: center;
-  background: #e2e2e2;
+  background:  rgb(233, 231, 231);
   text-decoration: none;
   color: rgb(87, 87, 87);
   transition: all .1s ease-in-out;
 }
 .button-action a:hover, .button-action i:hover :not(:last-child):after{
-  color: rgb(45, 210, 124);
   transition: all .2s ease-in-out;
   transform: scale(1.1,1.1);
 }
@@ -490,11 +532,37 @@ item img{
   top: 5px;
 }
 
+.button-action button{
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-action button:hover{
+  color: rgb(45, 210, 124) !important;
+  transition: all .2s ease-in-out;
+  transform: scale(1.1,1.1);
+}
+
+
+.button-action button div{
+  padding-top: 5px;
+  font-size: 12px;
+  color: #727171;
+}
+
+.button-action button .iten-button i{
+  margin-top: 0px;
+  font-size: 20px;
+}
+
+
 .fas{
   -webkit-text-fill-color: rgba(187, 187, 187, 0);
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke:1px #8b8b8b;
 }
+
 
 
 footer{
@@ -598,6 +666,11 @@ footer{
 .list-alerts{
   width: 99%;
   grid-template-columns: 1fr .5fr;
+}
+
+.form-input-style{
+  max-width:75vh;
+  min-width:90%;
 }
     
 }

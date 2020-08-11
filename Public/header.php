@@ -59,25 +59,16 @@
                     </div>
 
                     <div class="icon-center">
-                        <a href="#">
+                        <a onclick="toggle('mainPop')">
                             <div class="icon-ic" style="background-image: url('../images/plus.png');"></div>
                             <div class="icon-let">
                             criar alerta
                             </div>
                         </a>
                     </div>
-
+                    
                     <div class="icon-center">
-                    <a href="#">
-                            <div class="icon-ic" style="background-image: url('../images/gear2.png');"></div>
-                            <div class="icon-let">
-                            Opções
-                            </div>
-                    </a>
-                    </div>
-
-                    <div class="icon-center">
-                    <a href="#">
+                    <a onclick="openClose('ShareAlert')">
                             <div class="icon-ic" style="background-image: url('../images/share.png');"></div>
                             <div class="icon-let">
                             Partilhar
@@ -86,13 +77,14 @@
                     </div>
 
                     <div class="icon-center">
-                        <a href="#" style="border-radius:0px 4px 4px 0px;">
+                        <a onclick="printContent('container')" style="border-radius:0px 4px 4px 0px;">
                             <div class="icon-ic" style="background-image: url('../images/print.png');"></div>
                             <div class="icon-let">
                             Imprimir
                             </div>
                         </a>
                     </div>
+                    
                     
                 </div>
 
@@ -127,3 +119,4 @@
     </nav>
 </header>
     </form>
+
