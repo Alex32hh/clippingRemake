@@ -50,7 +50,7 @@
 
                     <div><button type="submit"></button></div>
                     <div>
-                        <input type='text' name="p" placeholder="Pesquisar..."  value="<?php 
+                        <input required type='text' name="p" placeholder="Pesquisar..."  value="<?php 
                         if(isset($_GET['req']))
                         echo 'Redirecionando...';
                         else
@@ -107,9 +107,9 @@
 
 
                 <div class='btn-conta'>
-                    <a to='/perfil'>
+                    <a href='/clipping/perfil/'>
                         <img src='../images/user.png' />
-                        <label style="padding-left: 3px;"> Perfil</label>
+                        <label style="padding-left: 0px;"> Perfil</label>
                     </a>
                 </div>
 

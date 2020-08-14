@@ -397,6 +397,7 @@ if (isset($_POST['nAlerta'])) {
     <form class="form-input-style" method="POST">
   
         <div class="input-data-field" style="background:#fff;">
+        Alerta Criado Com Sucesso!
         </div>
  
         <div class="input-data-field"> </div>
@@ -446,7 +447,6 @@ if (isset($_POST['nAlerta'])) {
 
     $db->close();
 }
-
 
 
 

@@ -5,14 +5,14 @@
         <div>
 
             <div class='alerta-icon'>
-                <a>
+               <a href="/clipping/alertas/" style="width:30px; text-decoration:none;">
                     <img src='images/bell.png' />
-                    <label class='link-hover-manifexto'>Alerta</label>
+                    <label class='link-hover-manifexto'>Alertas</label>
                 </a>
             </div>
 
             <div class='perfil-icon'>
-                <a>
+                <a href="/clipping/perfil/" style="width:30px; text-decoration:none;">
                     <img src='images/user.png' />
                     <label class='link-hover-manifexto'>Perfil</label>
                 </a>
@@ -25,7 +25,7 @@
     <div class='center-intem'>
 
         <div>
-            <img src='images/Logotipo_Manifexto2018@2x.png' />
+            <img src='cron-jobs/img/manilogo.png' />
         </div>
 
 
@@ -34,7 +34,7 @@
             <div></div>
             <form class='form-list' action="/clipping/result/">
                 <div><button type="submit"> <img src='images/search.png' /> </button></div>
-                <div><input type="text" placeholder="Pesquisar..." name="p" ref={register({ required: true })} />
+                <div><input required type="text" placeholder="Pesquisar..." name="p" ref={register({ required: true })} />
                 </div>
             </form>
             <div></div>

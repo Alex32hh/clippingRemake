@@ -15,10 +15,22 @@
         </div>
 
         <div class="btn-list">
-        <a href="/clipping/dashboard/?cp=<?php echo $row['alerta'];?>" class="icon-alert-list">
-        <div class="ic-bck" style="background: url('https://image.flaticon.com/icons/svg/886/886170.svg');"></div>
-            <div>Dashboard</div>
-        </a>
+          <?php
+                  $sqlite = "SELECT * FROM trakingNews WHERE idusuario ='" . $_SESSION['email'] . "' and idpesquisa ='" . $row['alerta'] . "' ";
+                  $dt = $db->query($sqlite);
+                  if ($dt->num_rows > 1) {
+                      echo ' <a href="/clipping/dashboard/?cp='.$row["alerta"].'" class="icon-alert-list">
+                      <div class="ic-bck" style="background: url(\'https://image.flaticon.com/icons/svg/886/886170.svg\');"></div>
+                          <div>Dashboard</div>
+                      </a>';
+                  }else{
+                    echo ' <a class="icon-alert-list">
+                    <div class="ic-bck" style="background: url(\'https://image.flaticon.com/icons/svg/886/886170.svg\'); opacity:.5;"></div>
+                        <div>Dashboard</div>
+                    </a>';
+                  }
+          ?>
+       
         <a href="/clipping/alertas/?delite=<?php echo $row['id'];?>" class="icon-alert-list">
         <div class="ic-bck" style="background: url('https://image.flaticon.com/icons/svg/1214/1214428.svg');"></div>
             <div>Remover</div>

@@ -1,5 +1,4 @@
-<?php session_start(); 
- ?>
+<?php session_start(); ?>
 <html>
 <!-- <meta http-equiv="refresh" content="2"> -->
 <head>
@@ -7,6 +6,7 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <meta data-n-head="ssr" charset="utf-8">
+    
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="ssr" data-hid="description" name="description"
         content="O Manifexto Clipping é um agregador de notícias 100% angolano, independente e livre.">
@@ -50,6 +50,7 @@
     ?>
     </style>
 
+
     <!-- <link rel='stylesheet' href='src/mainpage.css'> -->
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 </head>
@@ -76,10 +77,15 @@
     }else if(isset($_GET['p']))
     {
         echo '<title> Resultados de '.($_GET['p']).'</title>';
+    }else{
+        echo '<title> '.(explode('/',$request)[2]).'</title>';
     }
 
      if ($request != "/clipping/" && isset($_SESSION['email']) && $_SESSION['senha']){
-        include 'Public/header.php';
+         
+        if($request !='/clipping/perfil/')
+          include 'Public/header.php';
+
         require 'src/server.php';     
         echo newAlert();
         echo sharePopup($request);
@@ -126,11 +132,8 @@
             require __DIR__ . '/cron-jobs/index.php';
             break;
 
-        case '/clipping/Newalert/?p=' . ($ps) . '':
-            if (!isset($_SESSION['email']) && !$_SESSION['senha']) {
-                echo "<script>window.location.href='/clipping/login/';</script>";
-            } else
-                require __DIR__ . '/views/Newalert.php';
+        case '/clipping/perfil/':
+                require __DIR__ . '/Public/pages/perfil.php';
             break;
 
         default:
@@ -230,5 +233,7 @@
 
 
 </script>
+
+<script><?php include 'src/configs.js'; ?></script>
 
 </html>
